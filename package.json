@@ -20,7 +20,7 @@
       "url": "https://github.com/cubbles/cubx-grunt-http-server/blob/master/LICENSE-Apache-2.0"
     }
   ],
-  "main": "lib/cubx-grunt-http-server",
+  "main": "tasks/cubx-http-server",
   "engines": {
     "node": ">= 0.8.0"
   },
