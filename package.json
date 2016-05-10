@@ -27,8 +27,14 @@
   "scripts": {
     "test": "grunt nodeunit"
   },
-  "devDependencies": {
+  "dependencies": {
     "cubx-http-server": "^0.1.0",
+    "divhide": "2.0.1",
+    "lodash": "4.2.X",
+    "opener": "1.4.1",
+    "showdown": "^1.3.0"
+  },
+  "devDependencies": {
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-watch": "~0.5.3",
@@ -37,11 +43,7 @@
     "eslint-config-standard": "^5.1.0",
     "eslint-plugin-promise": "^1.1.0",
     "eslint-plugin-standard": "^1.3.2",
-    "grunt": "~0.4.5",
-    "divhide": "2.0.1",
-    "lodash": "4.2.X",
-    "opener": "1.4.1",
-    "showdown": "^1.3.0"
+    "grunt": "~0.4.5"
   },
   "keywords": []
 }
