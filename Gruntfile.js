@@ -1,7 +1,6 @@
 'use strict';
 
-module.exports = function(grunt) {
-
+module.exports = function (grunt) {
   var workspaceConfigPath = 'test/webpackages/.workspace';
   var workspaceName = 'webpackages';
 
@@ -12,7 +11,7 @@ module.exports = function(grunt) {
     workspaceConfig: grunt.file.readJSON(workspaceConfigPath),
 
     nodeunit: {
-      files: ['test/*_test.js'],
+      files: ['test/*_test.js']
     },
 
     'cubx-http-server': {
