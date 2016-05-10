@@ -8,9 +8,8 @@
   "rules": {
     "semi": [2, "always"]
   },
-  "globals": {
-    "module" : true,
-    "__dirname": "true"
+  "env": {
+    "node": true
   }
 
 }
