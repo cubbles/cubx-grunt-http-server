@@ -18,8 +18,8 @@ module.exports = function (grunt) {
       'dev': {
         port: '8282',
         root: 'test/<%= workspaceName %>',
-        proxy: '<%= workspaceConfig.remoteStoreUrl %>',
-        networkProxyUrl: 'http://192.168.70.107:808'
+        proxy: '<%= workspaceConfig.remoteStoreUrl %>'
+        // networkProxyUrl: '[proto]://[host]:[port]'
       }
     },
 
