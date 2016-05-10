@@ -24,11 +24,11 @@ module.exports = function(grunt) {
       }
     },
 
-    jshint: {
-      files: ['tasks/**/*.js', 'Gruntfile.js']
+    eslint: {
+      target: ['tasks/**/*.js', 'Gruntfile.js']
     }
   });
 
   grunt.loadTasks('tasks');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-eslint');
 };
