@@ -24,7 +24,10 @@ module.exports = function (grunt) {
     },
 
     eslint: {
-      target: ['tasks/**/*.js', 'Gruntfile.js']
+      target: ['tasks/**/*.js', 'Gruntfile.js'],
+      options: {
+        configFile: '.eslintrc'
+      }
     }
   });
 
