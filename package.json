@@ -28,7 +28,7 @@
     "test": "grunt nodeunit"
   },
   "dependencies": {
-    "cubx-http-server": "^0.1.0",
+    "cubx-http-server": "^0.x.x",
     "divhide": "2.0.1",
     "lodash": "4.2.X",
     "opener": "1.4.1",
