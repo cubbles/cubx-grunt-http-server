@@ -12,7 +12,7 @@ module.exports = function (grunt) {
       console.log('[%s] "%s %s" Error (%s): "%s"', date, req.method.red, req.url.red, error.status.toString().red,
         error.message.red);
     } else {
-      console.log('[%s] "%s %s" "%s"', date, req.method.cyan, req.url.cyan, req.headers['user-agent']);
+      console.log('[%s] "%s %s" "%s"', date, req.method.cyan, req.url.cyan, req.headers[ 'user-agent' ]);
     }
   };
 
@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     'Run a http-Server to get http access to your project files and data.',
     function () {
       var done = this.async();
-      var	defaults = {
+      var defaults = {
         root: process.cwd(),
         port: 8282,
         host: '127.0.0.1',
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
 
       var options = _.extend({}, defaults, this.data);
       options.port = typeof options.port === 'function' ? options.port() : options.port;
-      options.npu = options.networkProxyUrl ? options.networkProxyUrl : null;
+      options.npu = options.networkProxyUrl && options.networkProxyUrl.trim().length > 0 ? options.networkProxyUrl : null;
 
       // get the host to use on urls
       var urlHost = options.host !== '0.0.0.0' ? options.host : '127.0.0.1';

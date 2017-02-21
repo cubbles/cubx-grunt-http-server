@@ -1,7 +1,7 @@
 {
   "name": "cubx-grunt-http-server",
   "description": "Grunt integration to serve local static files and getting non-local dependencies from given remote.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/cubbles/cubx-grunt-http-server",
   "author": {
     "name": "Philipp Wagner",
@@ -28,7 +28,7 @@
     "test": "grunt nodeunit"
   },
   "dependencies": {
-    "cubx-http-server": "^0.x.x",
+    "cubx-http-server": "^0.4.2",
     "divhide": "2.0.1",
     "lodash": "4.2.X",
     "opener": "1.4.1",
