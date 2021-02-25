@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = function (grunt) {
-  var workspaceConfigPath = 'test/webpackages/.workspace';
-  var workspaceName = 'webpackages';
+  const workspaceConfigPath = 'test/webpackages/.workspace';
+  const workspaceName = 'webpackages';
 
   // Project configuration.
   grunt.initConfig({
@@ -15,7 +15,7 @@ module.exports = function (grunt) {
     },
 
     'cubx-http-server': {
-      'dev': {
+      dev: {
         port: '8282',
         root: 'test/<%= workspaceName %>',
         proxy: '<%= workspaceConfig.remoteStoreUrl %>'
@@ -33,4 +33,5 @@ module.exports = function (grunt) {
 
   grunt.loadTasks('tasks');
   grunt.loadNpmTasks('grunt-eslint');
+  grunt.loadNpmTasks('grunt-contrib-nodeunit');
 };

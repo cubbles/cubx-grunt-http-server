@@ -1,18 +1,18 @@
 'use strict';
-var _ = require('lodash');
-var Server = require('cubx-http-server');
-var opener = require('opener');
-var Divhide = require('divhide');
-var path = require('path');
+const _ = require('lodash');
+const Server = require('cubx-http-server');
+const opener = require('opener');
+const Divhide = require('divhide');
+const path = require('path');
 
 module.exports = function (grunt) {
-  var requestLogger = function (req, res, error) {
-    var date = (new Date()).toUTCString();
+  const requestLogger = function (req, res, error) {
+    const date = (new Date()).toUTCString();
     if (error) {
       console.log('[%s] "%s %s" Error (%s): "%s"', date, req.method.red, req.url.red, error.status.toString().red,
         error.message.red);
     } else {
-      console.log('[%s] "%s %s" "%s"', date, req.method.cyan, req.url.cyan, req.headers[ 'user-agent' ]);
+      console.log('[%s] "%s %s" "%s"', date, req.method.cyan, req.url.cyan, req.headers['user-agent']);
     }
   };
 
@@ -20,8 +20,8 @@ module.exports = function (grunt) {
     'cubx-http-server',
     'Run a http-Server to get http access to your project files and data.',
     function () {
-      var done = this.async();
-      var defaults = {
+      const done = this.async();
+      const defaults = {
         root: process.cwd(),
         port: 8282,
         host: '127.0.0.1',
@@ -36,19 +36,18 @@ module.exports = function (grunt) {
         openBrowser: false
       };
 
-      var options = _.extend({}, defaults, this.data);
+      const options = _.extend({}, defaults, this.data);
       options.port = typeof options.port === 'function' ? options.port() : options.port;
       options.npu = options.networkProxyUrl && options.networkProxyUrl.trim().length > 0 ? options.networkProxyUrl : null;
 
       // get the host to use on urls
-      var urlHost = options.host !== '0.0.0.0' ? options.host : '127.0.0.1';
+      const urlHost = options.host !== '0.0.0.0' ? options.host : '127.0.0.1';
 
       // initialize url string with default https protocol, no need for port here since using 443
-      var url = 'https://' + urlHost;
+      let url = 'https://' + urlHost;
 
       // sanitize root
       options.root = options.root ? options.root : './';
-
       // default module https support
       if (options.https !== null && options.https === true) {
         options.https = {
@@ -64,11 +63,11 @@ module.exports = function (grunt) {
       options.before = Divhide.Safe.array(options.before);
 
       // create http-server
-      var server = Server.createServer(options);
+      const server = Server.createServer(options);
 
       // start server
       server.listen(options.port, options.host, function () {
-        var msgData = _.extend({}, options, {
+        const msgData = _.extend({}, options, {
           protocol: options.https ? 'https' : 'http'
         });
 
